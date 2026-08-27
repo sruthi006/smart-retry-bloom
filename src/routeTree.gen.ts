@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuditTrailRouteImport } from './routes/audit-trail'
+import { Route as BusinessImpactRouteImport } from './routes/business-impact'
+import { Route as RecoveryAgentRouteImport } from './routes/recovery-agent'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuditTrailRoute = AuditTrailRouteImport.update({
+  id: '/audit-trail',
+  path: '/audit-trail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessImpactRoute = BusinessImpactRouteImport.update({
+  id: '/business-impact',
+  path: '/business-impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecoveryAgentRoute = RecoveryAgentRouteImport.update({
+  id: '/recovery-agent',
+  path: '/recovery-agent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/business-impact': typeof BusinessImpactRoute
+  '/recovery-agent': typeof RecoveryAgentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/business-impact': typeof BusinessImpactRoute
+  '/recovery-agent': typeof RecoveryAgentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audit-trail': typeof AuditTrailRoute
+  '/business-impact': typeof BusinessImpactRoute
+  '/recovery-agent': typeof RecoveryAgentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/audit-trail' | '/business-impact' | '/recovery-agent'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/audit-trail' | '/business-impact' | '/recovery-agent'
+  id: '__root__' | '/' | '/audit-trail' | '/business-impact' | '/recovery-agent'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditTrailRoute: typeof AuditTrailRoute
+  BusinessImpactRoute: typeof BusinessImpactRoute
+  RecoveryAgentRoute: typeof RecoveryAgentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audit-trail': {
+      id: '/audit-trail'
+      path: '/audit-trail'
+      fullPath: '/audit-trail'
+      preLoaderRoute: typeof AuditTrailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-impact': {
+      id: '/business-impact'
+      path: '/business-impact'
+      fullPath: '/business-impact'
+      preLoaderRoute: typeof BusinessImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recovery-agent': {
+      id: '/recovery-agent'
+      path: '/recovery-agent'
+      fullPath: '/recovery-agent'
+      preLoaderRoute: typeof RecoveryAgentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditTrailRoute: AuditTrailRoute,
+  BusinessImpactRoute: BusinessImpactRoute,
+  RecoveryAgentRoute: RecoveryAgentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
