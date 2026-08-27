@@ -132,8 +132,8 @@ export const mockTransactions: TransactionContext[] = Array.from({ length: 14 },
   return {
     transaction_id: `TXN-${(48210 + i * 37).toString()}`,
     amount_inr: Math.round((400 + r * 46_000) / 10) * 10,
-    decline_reason: DECLINE_REASONS[i % DECLINE_REASONS.length],
-    payment_method: METHODS[(i * 3) % METHODS.length],
+    decline_reason: DECLINE_REASONS[i % DECLINE_REASONS.length]!,
+    payment_method: METHODS[(i * 3) % METHODS.length]!,
     failed_at: new Date(base - i * 47 * 60_000).toISOString(),
     customer_prior_failures: Math.floor(r * 5),
     customer_prior_recoveries: Math.floor(seeded(i + 50) * 4),
@@ -226,13 +226,13 @@ export const mockAudit: AuditResponse = {
     const tier = r > 0.62 ? "high" : r > 0.3 ? "medium" : "low";
     const result = tier === "low" ? (r > 0.18 ? "stopped" : "failed") : r > 0.42 ? "recovered" : "stopped";
     const amount = Math.round((600 + r * 42_000) / 10) * 10;
-    const offset = OFFSETS[Math.floor(r * OFFSETS.length)][0];
+    const offset = OFFSETS[Math.floor(r * OFFSETS.length)]![0];
     const base = new Date("2026-08-26T13:40:00Z").getTime() - i * 26 * 60_000;
     return {
       id: `EVT-${9100 + i}`,
       transaction_id: `TXN-${48210 + (i % 14) * 37}`,
       timestamp: new Date(base).toISOString(),
-      decline_reason: DECLINE_REASONS[i % DECLINE_REASONS.length],
+      decline_reason: DECLINE_REASONS[i % DECLINE_REASONS.length]!,
       selected_offset_label: offset,
       confidence_tier: tier as "high" | "medium" | "low",
       result: result as "recovered" | "stopped" | "failed",
