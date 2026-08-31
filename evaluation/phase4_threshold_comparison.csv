@@ -1,0 +1,21 @@
+model,status,threshold,precision,recall,f1,balanced_accuracy,positive_predictions,positive_prediction_proportion,reason
+Logistic Regression (original saved),available,0.3,0.4196835031432907,0.6151890689545599,0.49896907216494846,0.69409500085564,4613.0,0.308768406961178,
+Logistic Regression (original saved),available,0.4,0.4711340206185567,0.4356530028598665,0.45269935611688955,0.6525759290564914,2910.0,0.19477911646586346,
+Logistic Regression (original saved),available,0.5,0.5193434935521688,0.1407689863361932,0.2215,0.5530012997482713,853.0,0.057095046854082995,
+Logistic Regression (original saved),available,0.6,0.0,0.0,0.0,0.5,0.0,0.0,
+Logistic Regression (original saved),available,0.7,0.0,0.0,0.0,0.5,0.0,0.0,
+Random Forest,available,0.3,0.25923197347822086,0.8945027009850651,0.4019705840354134,0.606201575202106,10859.0,0.7268406961178046,
+Random Forest,available,0.4,0.34714003944773175,0.7829679059421671,0.4810151293313812,0.6950114692943261,7098.0,0.4751004016064257,
+Random Forest,available,0.5,0.39761029411764703,0.6873212583412774,0.5037847909630837,0.7047222759102301,5440.0,0.36412315930388217,
+Random Forest,available,0.6,0.45105399942246605,0.4963457260883381,0.4726172465960666,0.6675742028220033,3463.0,0.23179384203480588,
+Random Forest,available,0.7,0.49965870307167237,0.23260247855100094,0.31743278404163056,0.5852234812834713,1465.0,0.09805890227576974,
+HistGradientBoosting,unavailable,0.3,,,,,,,No fitted model or held-out row-level predictions were saved after the comparison experiment.
+HistGradientBoosting,unavailable,0.4,,,,,,,No fitted model or held-out row-level predictions were saved after the comparison experiment.
+HistGradientBoosting,unavailable,0.5,,,,,,,No fitted model or held-out row-level predictions were saved after the comparison experiment.
+HistGradientBoosting,unavailable,0.6,,,,,,,No fitted model or held-out row-level predictions were saved after the comparison experiment.
+HistGradientBoosting,unavailable,0.7,,,,,,,No fitted model or held-out row-level predictions were saved after the comparison experiment.
+Logistic Regression (enhanced experiment),unavailable,0.3,,,,,,,No separate fitted model or held-out row-level predictions were saved after the comparison experiment.
+Logistic Regression (enhanced experiment),unavailable,0.4,,,,,,,No separate fitted model or held-out row-level predictions were saved after the comparison experiment.
+Logistic Regression (enhanced experiment),unavailable,0.5,,,,,,,No separate fitted model or held-out row-level predictions were saved after the comparison experiment.
+Logistic Regression (enhanced experiment),unavailable,0.6,,,,,,,No separate fitted model or held-out row-level predictions were saved after the comparison experiment.
+Logistic Regression (enhanced experiment),unavailable,0.7,,,,,,,No separate fitted model or held-out row-level predictions were saved after the comparison experiment.
