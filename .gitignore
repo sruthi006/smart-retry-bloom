@@ -1,32 +1,59 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
 
-node_modules
-dist
-dist-ssr
-.output
-.vinxi
-.tanstack/**
-.nitro
-*.local
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
 
-# Wrangler / Cloudflare
-.wrangler/
-.dev.vars
+# Environment and secrets
+.env
+.env.*
+!.env.example
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ML artifacts (generated later; keep folder structure via .gitkeep)
+models/*.pkl
+models/*.joblib
+models/*.json
+models/*.txt
+!models/.gitkeep
+
+# Generated datasets (synthetic data will be created in a later phase)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/.gitkeep
+
+# Evaluation outputs
+evaluation/outputs/
+evaluation/*.csv
+evaluation/*.png
+!evaluation/.gitkeep
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
